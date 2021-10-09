@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/cost_offer?serverTimezone=GMT%2B8"
+			userId="root"
+			password="123456">
+		<property name="nullCatalogMeansCurrent" value = "true" />
+		</jdbcConnection>
+
+	<!-- 指定实体类生成，位置和名称 -->
+	<javaModelGenerator targetPackage="entity" targetProject=".\src\main\java">
+		<property name="enableSubPackages" value="true" />
+		<property name="trimStrings" value="true" />
+	</javaModelGenerator>
+
+	<!-- 指定sql定义文件(XML文件)，位置和名称 -->
+	<sqlMapGenerator targetPackage="sql"  targetProject=".\src\main\java">
+		<property name="enableSubPackages" value="true" />
+	</sqlMapGenerator>
+
+	<!-- 指定Mapper接口，的位置和名称 -->
+	<javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="dao"  targetProject=".\src\main\java">
+		<property name="enableSubPackages" value="true" />
+	</javaClientGenerator>
+
+	<!-- 指定哪些表生成   %是所有表-->
+	<table tableName="%"
+		   enableCountByExample="false" enableDeleteByExample="false"
+		   enableSelectByExample="false" enableUpdateByExample="false">
+	</table>
+
+	</context>
+</generatorConfiguration>

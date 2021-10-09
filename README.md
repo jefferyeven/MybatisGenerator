@@ -1,0 +1,5 @@
+# MybatisGenerator
+这是一个可以根据数据库自动生成bean 和 mapper
+
+只需要更改generatorConfig-demo.xml文件
+和运行MyBatisGeneratorTool就可以了其他的都不需要动
