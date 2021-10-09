@@ -28,7 +28,7 @@
 	</sqlMapGenerator>
 
 	<!-- 指定Mapper接口，的位置和名称 -->
-	<javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="dao"  targetProject=".\src\main\java">
+	<javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="mapper"  targetProject=".\src\main\java">
 		<property name="enableSubPackages" value="true" />
 	</javaClientGenerator>
 
